@@ -1,3 +1,49 @@
 <resources>
     <string name="app_name">Mp-7</string>
+    <string name="second">2ND</string>
+    <string name="y_equals">Y=</string>
+    <string name="window">WINDOW</string>
+    <string name="zoom">ZOOM</string>
+    <string name="trace">TRACE</string>
+    <string name="graph">GRAPH</string>
+    <string name="mode">MODE</string>
+    <string name="delete">DEL</string>
+    <string name="alphabet">ALPHA</string>
+    <string name="symbols">X,T,n</string>
+    <string name="statistics">STAT</string>
+    <string name="math">MATH</string>
+    <string name="apps">APPS</string>
+    <string name="programs">PRGM</string>
+    <string name="vars">VARS</string>
+    <string name="clear">CLEAR</string>
+    <string name="inverse">X^-1</string>
+    <string name="sin">SIN</string>
+    <string name="cos">COS</string>
+    <string name="tan">TAN</string>
+    <string name="power">^</string>
+    <string name="squared">X^2</string>
+    <string name="comma">,</string>
+    <string name="left_parentheses">(</string>
+    <string name="right_parentheses">)</string>
+    <string name="division">/</string>
+    <string name="log">LOG</string>
+    <string name="seven">7</string>
+    <string name="eight">8</string>
+    <string name="nine">9</string>
+    <string name="multiply">X</string>
+    <string name="ln">LN</string>
+    <string name="four">4</string>
+    <string name="five">5</string>
+    <string name="six">6</string>
+    <string name="subtract">-</string>
+    <string name="store">STO></string>
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="three">3</string>
+    <string name="add">+</string>
+    <string name="zero">0</string>
+    <string name="decimal">.</string>
+    <string name="negative">(-)</string>
+    <string name="enter">ENTER</string>
+
 </resources>

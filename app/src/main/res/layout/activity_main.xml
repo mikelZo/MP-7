@@ -371,6 +371,39 @@
         tools:layout_editor_absoluteX="311dp"
         tools:layout_editor_absoluteY="469dp" />
 
+    <ImageButton
+        android:id="@+id/up"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        app:srcCompat="@drawable/ic_up_black"
+        tools:layout_editor_absoluteX="286dp"
+        tools:layout_editor_absoluteY="154dp" />
+
+    <ImageButton
+        android:id="@+id/down"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        app:srcCompat="@drawable/ic_down_black"
+        tools:layout_editor_absoluteX="286dp"
+        tools:layout_editor_absoluteY="194dp" />
+
+    <ImageButton
+        android:id="@+id/right"
+        android:layout_width="51dp"
+        android:layout_height="80dp"
+        app:srcCompat="@drawable/ic_right_black"
+        tools:layout_editor_absoluteX="337dp"
+        tools:layout_editor_absoluteY="154dp" />
+
+    <ImageButton
+        android:id="@+id/left"
+        android:layout_width="51dp"
+        android:layout_height="80dp"
+        app:srcCompat="@drawable/ic_left_black"
+        tools:layout_editor_absoluteX="236dp"
+        tools:layout_editor_absoluteY="154dp" />
+
+
 
     <TextView
         android:layout_width="313dp"

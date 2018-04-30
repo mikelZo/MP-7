@@ -1,21 +1,21 @@
 package edu.illinois.cs.cs125.mp_7;
 /** Makes calculations inputted by the calculator. */
 public class Calculate {
-    private String input = "";
+    private static String input = "";
 
     public void clear() {
         input = "";
     }
 
-    public void addNumberToString(final String number) {
+    public static void addNumberToString(final String number) {
         input += number;
     }
 
-    public void addOperationToString(final String operation) {
+    public static void addOperationToString(final String operation) {
         input += " " + operation + " ";
     }
 
-    private boolean hasSymbol(final String calculation) {
+    private static boolean hasSymbol(final String calculation) {
         for (int i = 0; i < calculation.length(); i++) {
             if (calculation.substring(i, i + 1).equals("+") || calculation.substring(i, i + 1).equals("-")) {
                 return true;
@@ -30,7 +30,7 @@ public class Calculate {
         return false;
     }
 
-    private boolean hasPower(final String calculation) {
+    private static boolean hasPower(final String calculation) {
         for (int i = 0; i < calculation.length(); i++) {
             if (calculation.substring(i, i + 1).equals("^")) {
                 return true;
@@ -39,7 +39,7 @@ public class Calculate {
         return false;
     }
 
-    private boolean hasParentheses(final String calculation) {
+    private static boolean hasParentheses(final String calculation) {
         for (int i = 0; i < calculation.length(); i++) {
             if (calculation.substring(i, i + 1).equals("(")) {
                 return true;
@@ -48,7 +48,7 @@ public class Calculate {
         return false;
     }
 
-    private boolean hasDivision(final String calculation) {
+    private static boolean hasDivision(final String calculation) {
         for (int i = 0; i < calculation.length(); i++) {
             if (calculation.substring(i, i + 1).equals("/")) {
                 return true;
@@ -57,7 +57,7 @@ public class Calculate {
         return false;
     }
 
-    private boolean hasMultiply(final String calculation) {
+    private static boolean hasMultiply(final String calculation) {
         for (int i = 0; i < calculation.length(); i++) {
             if (calculation.substring(i, i + 1).equals("*")) {
                 return true;
@@ -66,7 +66,7 @@ public class Calculate {
         return false;
     }
 
-    private boolean hasAdd(final String calculation) {
+    private static boolean hasAdd(final String calculation) {
         for (int i = 0; i < calculation.length(); i++) {
             if (calculation.substring(i, i + 1).equals("+")) {
                 return true;
@@ -75,7 +75,7 @@ public class Calculate {
         return false;
     }
 
-    private boolean hasSubtract(final String calculation) {
+    private static boolean hasSubtract(final String calculation) {
         for (int i = 0; i < calculation.length(); i++) {
             if (calculation.substring(i, i + 1).equals("-")) {
                 return true;
@@ -84,7 +84,7 @@ public class Calculate {
         return false;
     }
 
-    private int findSymbol(final String calculation, final String operation) {
+    private static int findSymbol(final String calculation, final String operation) {
         for (int i = 0; i < calculation.length(); i++) {
             if (calculation.substring(i, i + 1).equals(operation)) {
                 return i;
@@ -93,7 +93,7 @@ public class Calculate {
         return 0;
     }
 
-    private double leftNumber(final String calculation, final int index) {
+    private static double leftNumber(final String calculation, final int index) {
         for (int i = index - 2; i >= 0; i--) {
             if (calculation.startsWith(" ", i)) {
                 return Double.parseDouble(calculation.substring(i, index));
@@ -102,7 +102,7 @@ public class Calculate {
         return Double.parseDouble(calculation.substring(0, index - 1));
     }
 
-    private double rightNumber(final String calculation, final int index) {
+    private static double rightNumber(final String calculation, final int index) {
         for (int i = index + 2; i < calculation.length(); i++) {
             if (calculation.substring(index, i + 1).endsWith(" ")) {
                 return Double.parseDouble(calculation.substring(index + 2, i));
@@ -112,7 +112,7 @@ public class Calculate {
     }
 
     /* LeftString and rightString do not leave spaces. */
-    private String leftString(final String calculation, final int index) {
+    private static String leftString(final String calculation, final int index) {
         for (int i = index - 2; i >= 0; i--) {
             if (calculation.startsWith(" ", i)) {
                 return calculation.substring(0, i);
@@ -121,7 +121,7 @@ public class Calculate {
         return null;
     }
 
-    private String rightString(final String calculation, final int index) {
+    private static String rightString(final String calculation, final int index) {
         for (int i = index + 2; i < calculation.length(); i++) {
             if (calculation.substring(index, i + 1).endsWith(" ")) {
                 return calculation.substring(i + 1, calculation.length());
@@ -130,7 +130,7 @@ public class Calculate {
         return null;
     }
 
-    private String calculateParentheses(final String parentheses) {
+    private static String calculateParentheses(final String parentheses) {
         if (hasSymbol(parentheses) == false) {
             return parentheses;
         } else {
@@ -326,7 +326,7 @@ public class Calculate {
         return calculateParentheses(parentheses);
     }
 
-    public String calculate() {
+    public static String calculate() {
         if (hasSymbol(input) == false) {
             return input;
         } else {

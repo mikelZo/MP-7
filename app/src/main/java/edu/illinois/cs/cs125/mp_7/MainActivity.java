@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick (final View v) {
                 Log.d(TAG, "second button clicked");
-                /* Insert swap tab code here */
+                /* Insert swap tab code here */ 
             }
         });
 

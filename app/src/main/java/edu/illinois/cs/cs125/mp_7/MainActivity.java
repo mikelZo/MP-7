@@ -143,12 +143,22 @@ public class MainActivity extends AppCompatActivity {
                 txtView.setText(Calculate.getString());
             }
         });
+        final Button negative = findViewById(R.id.negative);
+        negative.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick (final View v) {
+                Log.d(TAG, "-");
+                Calculate.addNumberToString("-");
+                txtView.setText(Calculate.getString());
+            }
+        });
         final Button add = findViewById(R.id.add);
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick (final View v) {
                 Log.d(TAG, "add");
-                Calculate.addOperationToString("+");
+                Calculate.addOperationToInput("+");
+                Calculate.addOperationToOutput("+");
                 txtView.setText(Calculate.getString());
             }
         });
@@ -157,7 +167,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick (final View v) {
                 Log.d(TAG, "subtract");
-                Calculate.addOperationToString("-");
+                Calculate.addOperationToInput("-");
+                Calculate.addOperationToOutput("@");
                 txtView.setText(Calculate.getString());
             }
         });
@@ -166,7 +177,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick (final View v) {
                 Log.d(TAG, "multiply");
-                Calculate.addOperationToString("*");
+                Calculate.addOperationToInput("*");
+                Calculate.addOperationToOutput("*");
                 txtView.setText(Calculate.getString());
             }
         });
@@ -175,7 +187,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick (final View v) {
                 Log.d(TAG, "divide");
-                Calculate.addOperationToString("/");
+                Calculate.addOperationToInput("/");
+                Calculate.addOperationToOutput("/");
                 txtView.setText(Calculate.getString());
             }
         });
@@ -184,7 +197,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick (final View v) {
                 Log.d(TAG, "(");
-                Calculate.addOperationToString("(");
+                Calculate.addOperationToInput("(");
+                Calculate.addOperationToOutput("(");
                 txtView.setText(Calculate.getString());
             }
         });
@@ -193,7 +207,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick (final View v) {
                 Log.d(TAG, ")");
-                Calculate.addOperationToString(")");
+                Calculate.addOperationToInput(")");
+                Calculate.addOperationToOutput(")");
                 txtView.setText(Calculate.getString());
             }
         });
@@ -203,7 +218,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick (final View v) {
                 Log.d(TAG, "calculated value");
                 Calculate.calculate();
-                txtView.setText(Calculate.getString());
+                txtView.setText(Calculate.getAnswer());
             }
         });
         final Button clear = findViewById(R.id.clear);
@@ -230,7 +245,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick (final View v) {
                 Log.d(TAG, "power");
-                Calculate.addOperationToString("^");
+                Calculate.addOperationToInput("^");
+                Calculate.addOperationToOutput("^");
                 txtView.setText(Calculate.getString());
             }
         });

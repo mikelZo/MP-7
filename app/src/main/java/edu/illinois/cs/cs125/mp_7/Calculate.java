@@ -2,24 +2,33 @@ package edu.illinois.cs.cs125.mp_7;
 /** Makes calculations inputted by the calculator. */
 public class Calculate {
     private static String input = "";
+    private static String output = "";
 
     public static void clear() {
         input = "";
+        output = "";
     }
 
     public static void addNumberToString(final String number) {
         input += number;
+        output += number;
     }
 
-    public static void addOperationToString(final String operation) {
+    public static void addOperationToInput(final String operation) {
         input += " " + operation + " ";
+    }
+
+    public static void addOperationToOutput(final String operation) {
+        output += " " + operation + " ";
     }
 
     public static void delete() {
         if (input.length() > 1) {
             input = input.substring(0, input.length() - 1);
+            output = output.substring(0, output.length() - 1);
         } else {
             input = "";
+            output = "";
         }
     }
 
@@ -27,9 +36,13 @@ public class Calculate {
         return input;
     }
 
+    public static String getAnswer() {
+        return output;
+    }
+
     private static boolean hasSymbol(final String calculation) {
         for (int i = 0; i < calculation.length(); i++) {
-            if (calculation.substring(i, i + 1).equals("+") || calculation.substring(i, i + 1).equals("-")) {
+            if (calculation.substring(i, i + 1).equals("+") || calculation.substring(i, i + 1).equals("@")) {
                 return true;
             }
             if (calculation.substring(i, i + 1).equals("*") || calculation.substring(i, i + 1).equals("/")) {
@@ -89,7 +102,7 @@ public class Calculate {
 
     private static boolean hasSubtract(final String calculation) {
         for (int i = 0; i < calculation.length(); i++) {
-            if (calculation.substring(i, i + 1).equals("-")) {
+            if (calculation.substring(i, i + 1).equals("@")) {
                 return true;
             }
         }
@@ -260,7 +273,7 @@ public class Calculate {
                 }
             }
             if (hasAdd(parentheses) == true && hasSubtract(parentheses) == true) {
-                if (findSymbol(parentheses, "+") < findSymbol(parentheses, "-")) {
+                if (findSymbol(parentheses, "+") < findSymbol(parentheses, "@")) {
                     int index = findSymbol(parentheses, "+");
                     double left = leftNumber(parentheses, index);
                     double right = rightNumber(parentheses, index);
@@ -279,7 +292,7 @@ public class Calculate {
                         return calculateParentheses(reduced);
                     }
                 } else {
-                    int index = findSymbol(parentheses, "-");
+                    int index = findSymbol(parentheses, "@");
                     double left = leftNumber(parentheses, index);
                     double right = rightNumber(parentheses, index);
                     double answer = left - right;
@@ -316,7 +329,7 @@ public class Calculate {
                     return calculateParentheses(reduced);
                 }
             } else if (hasSubtract(parentheses) == true) {
-                int index = findSymbol(parentheses, "-");
+                int index = findSymbol(parentheses, "@");
                 double left = leftNumber(parentheses, index);
                 double right = rightNumber(parentheses, index);
                 double answer = left - right;
@@ -339,194 +352,194 @@ public class Calculate {
     }
 
     public static String calculate() {
-        if (hasSymbol(input) == false) {
-            return input;
+        if (hasSymbol(output) == false) {
+            return output;
         } else {
-            if (hasParentheses(input) == true) {
-                int leftIndex = findSymbol(input, "(");
-                int rightIndex = findSymbol(input, ")");
-                String parentheses = calculateParentheses(input.substring(leftIndex + 2, rightIndex - 1));
-                if (leftString(input, leftIndex) != null && rightString(input, rightIndex) != null) {
-                    input = leftString(input, leftIndex) + " " + parentheses + " " + rightString(input, rightIndex);
+            if (hasParentheses(output) == true) {
+                int leftIndex = findSymbol(output, "(");
+                int rightIndex = findSymbol(output, ")");
+                String parentheses = calculateParentheses(output.substring(leftIndex + 2, rightIndex - 1));
+                if (leftString(output, leftIndex) != null && rightString(output, rightIndex) != null) {
+                    output = leftString(output, leftIndex) + " " + parentheses + " " + rightString(output, rightIndex);
                     return calculate();
-                } else if (leftString(input, leftIndex) != null) {
-                    input = leftString(input, leftIndex) + " " + parentheses;
+                } else if (leftString(output, leftIndex) != null) {
+                    output = leftString(output, leftIndex) + " " + parentheses;
                     return calculate();
-                } else if (rightString(input, rightIndex) != null) {
-                    input = parentheses + " " + rightString(input, rightIndex);
+                } else if (rightString(output, rightIndex) != null) {
+                    output = parentheses + " " + rightString(output, rightIndex);
                     return calculate();
                 } else {
-                    input = parentheses;
+                    output = parentheses;
                     return calculate();
                 }
             }
-            if (hasPower(input) == true) {
-                int index = findSymbol(input, "^");
-                double left = leftNumber(input, index);
-                double right = rightNumber(input, index);
+            if (hasPower(output) == true) {
+                int index = findSymbol(output, "^");
+                double left = leftNumber(output, index);
+                double right = rightNumber(output, index);
                 double answer = Math.pow(left, right);
-                if (leftString(input, index) != null && rightString(input, index) != null) {
-                    input = leftString(input, index) + " " + Double.toString(answer) + " " + rightString(input, index);
+                if (leftString(output, index) != null && rightString(output, index) != null) {
+                    output = leftString(output, index) + " " + Double.toString(answer) + " " + rightString(output, index);
                     return calculate();
-                } else if (leftString(input, index) != null) {
-                    input = leftString(input, index) + " " + Double.toString(answer);
+                } else if (leftString(output, index) != null) {
+                    output = leftString(output, index) + " " + Double.toString(answer);
                     return calculate();
-                } else if (rightString(input, index) != null) {
-                    input = Double.toString(answer) + " " + rightString(input, index);
+                } else if (rightString(output, index) != null) {
+                    output = Double.toString(answer) + " " + rightString(output, index);
                     return calculate();
                 } else {
-                    input = Double.toString(answer);
+                    output = Double.toString(answer);
                     return calculate();
                 }
             }
-            if (hasMultiply(input) == true && hasDivision(input) == true) {
-                if (findSymbol(input, "*") < findSymbol(input, "/")) {
-                    int index = findSymbol(input, "*");
-                    double left = leftNumber(input, index);
-                    double right = rightNumber(input, index);
+            if (hasMultiply(output) == true && hasDivision(output) == true) {
+                if (findSymbol(output, "*") < findSymbol(output, "/")) {
+                    int index = findSymbol(output, "*");
+                    double left = leftNumber(output, index);
+                    double right = rightNumber(output, index);
                     double answer = left*right;
-                    if (leftString(input, index) != null && rightString(input, index) != null) {
-                        input = leftString(input, index) + " " + Double.toString(answer) + " " + rightString(input, index);
+                    if (leftString(output, index) != null && rightString(output, index) != null) {
+                        output = leftString(output, index) + " " + Double.toString(answer) + " " + rightString(output, index);
                         return calculate();
-                    } else if (leftString(input, index) != null) {
-                        input = leftString(input, index) + " " + Double.toString(answer);
+                    } else if (leftString(output, index) != null) {
+                        output = leftString(output, index) + " " + Double.toString(answer);
                         return calculate();
-                    } else if (rightString(input, index) != null) {
-                        input = Double.toString(answer) + " " + rightString(input, index);
+                    } else if (rightString(output, index) != null) {
+                        output = Double.toString(answer) + " " + rightString(output, index);
                         return calculate();
                     } else {
-                        input = Double.toString(answer);
+                        output = Double.toString(answer);
                         return calculate();
                     }
                 } else {
-                    int index = findSymbol(input, "/");
-                    double left = leftNumber(input, index);
-                    double right = rightNumber(input, index);
+                    int index = findSymbol(output, "/");
+                    double left = leftNumber(output, index);
+                    double right = rightNumber(output, index);
                     double answer = left/right;
-                    if (leftString(input, index) != null && rightString(input, index) != null) {
-                        input = leftString(input, index) + " " + Double.toString(answer) + " " + rightString(input, index);
+                    if (leftString(output, index) != null && rightString(output, index) != null) {
+                        output = leftString(output, index) + " " + Double.toString(answer) + " " + rightString(output, index);
                         return calculate();
-                    } else if (leftString(input, index) != null) {
-                        input = leftString(input, index) + " " + Double.toString(answer);
+                    } else if (leftString(output, index) != null) {
+                        output = leftString(output, index) + " " + Double.toString(answer);
                         return calculate();
-                    } else if (rightString(input, index) != null) {
-                        input = Double.toString(answer) + " " + rightString(input, index);
+                    } else if (rightString(output, index) != null) {
+                        output = Double.toString(answer) + " " + rightString(output, index);
                         return calculate();
                     } else {
-                        input = Double.toString(answer);
+                        output = Double.toString(answer);
                         return calculate();
                     }
                 }
 
-            } else if (hasMultiply(input) == true) {
-                int index = findSymbol(input, "*");
-                double left = leftNumber(input, index);
-                double right = rightNumber(input, index);
+            } else if (hasMultiply(output) == true) {
+                int index = findSymbol(output, "*");
+                double left = leftNumber(output, index);
+                double right = rightNumber(output, index);
                 double answer = left*right;
-                if (leftString(input, index) != null && rightString(input, index) != null) {
-                    input = leftString(input, index) + " " + Double.toString(answer) + " " + rightString(input, index);
+                if (leftString(output, index) != null && rightString(output, index) != null) {
+                    output = leftString(output, index) + " " + Double.toString(answer) + " " + rightString(output, index);
                     return calculate();
-                } else if (leftString(input, index) != null) {
-                    input = leftString(input, index) + " " + Double.toString(answer);
+                } else if (leftString(output, index) != null) {
+                    output = leftString(output, index) + " " + Double.toString(answer);
                     return calculate();
-                } else if (rightString(input, index) != null) {
-                    input = Double.toString(answer) + " " + rightString(input, index);
+                } else if (rightString(output, index) != null) {
+                    output = Double.toString(answer) + " " + rightString(output, index);
                     return calculate();
                 } else {
-                    input = Double.toString(answer);
+                    output = Double.toString(answer);
                     return calculate();
                 }
-            } else if (hasDivision(input) == true) {
-                int index = findSymbol(input, "/");
-                double left = leftNumber(input, index);
-                double right = rightNumber(input, index);
+            } else if (hasDivision(output) == true) {
+                int index = findSymbol(output, "/");
+                double left = leftNumber(output, index);
+                double right = rightNumber(output, index);
                 double answer = left/right;
-                if (leftString(input, index) != null && rightString(input, index) != null) {
-                    input = leftString(input, index) + " " + Double.toString(answer) + " " + rightString(input, index);
+                if (leftString(output, index) != null && rightString(output, index) != null) {
+                    output = leftString(output, index) + " " + Double.toString(answer) + " " + rightString(output, index);
                     return calculate();
-                } else if (leftString(input, index) != null) {
-                    input = leftString(input, index) + " " + Double.toString(answer);
+                } else if (leftString(output, index) != null) {
+                    output = leftString(output, index) + " " + Double.toString(answer);
                     return calculate();
-                } else if (rightString(input, index) != null) {
-                    input = Double.toString(answer) + " " + rightString(input, index);
+                } else if (rightString(output, index) != null) {
+                    output = Double.toString(answer) + " " + rightString(output, index);
                     return calculate();
                 } else {
-                    input = Double.toString(answer);
+                    output = Double.toString(answer);
                     return calculate();
                 }
             }
-            if (hasAdd(input) == true && hasSubtract(input) == true) {
-                if (findSymbol(input, "+") < findSymbol(input, "-")) {
-                    int index = findSymbol(input, "+");
-                    double left = leftNumber(input, index);
-                    double right = rightNumber(input, index);
+            if (hasAdd(output) == true && hasSubtract(output) == true) {
+                if (findSymbol(output, "+") < findSymbol(output, "@")) {
+                    int index = findSymbol(output, "+");
+                    double left = leftNumber(output, index);
+                    double right = rightNumber(output, index);
                     double answer = left + right;
-                    if (leftString(input, index) != null && rightString(input, index) != null) {
-                        input = leftString(input, index) + " " + Double.toString(answer) + " " + rightString(input, index);
+                    if (leftString(output, index) != null && rightString(output, index) != null) {
+                        output = leftString(output, index) + " " + Double.toString(answer) + " " + rightString(output, index);
                         return calculate();
-                    } else if (leftString(input, index) != null) {
-                        input = leftString(input, index) + " " + Double.toString(answer);
+                    } else if (leftString(output, index) != null) {
+                        output = leftString(output, index) + " " + Double.toString(answer);
                         return calculate();
-                    } else if (rightString(input, index) != null) {
-                        input = Double.toString(answer) + " " + rightString(input, index);
+                    } else if (rightString(output, index) != null) {
+                        output = Double.toString(answer) + " " + rightString(output, index);
                         return calculate();
                     } else {
-                        input = Double.toString(answer);
+                        output = Double.toString(answer);
                         return calculate();
                     }
                 } else {
-                    int index = findSymbol(input, "-");
-                    double left = leftNumber(input, index);
-                    double right = rightNumber(input, index);
+                    int index = findSymbol(output, "@");
+                    double left = leftNumber(output, index);
+                    double right = rightNumber(output, index);
                     double answer = left - right;
-                    if (leftString(input, index) != null && rightString(input, index) != null) {
-                        input = leftString(input, index) + " " + Double.toString(answer) + " " + rightString(input, index);
+                    if (leftString(output, index) != null && rightString(output, index) != null) {
+                        output = leftString(output, index) + " " + Double.toString(answer) + " " + rightString(output, index);
                         return calculate();
-                    } else if (leftString(input, index) != null) {
-                        input = leftString(input, index) + " " + Double.toString(answer);
+                    } else if (leftString(output, index) != null) {
+                        output = leftString(output, index) + " " + Double.toString(answer);
                         return calculate();
-                    } else if (rightString(input, index) != null) {
-                        input = Double.toString(answer) + " " + rightString(input, index);
+                    } else if (rightString(output, index) != null) {
+                        output = Double.toString(answer) + " " + rightString(output, index);
                         return calculate();
                     } else {
-                        input = Double.toString(answer);
+                        output = Double.toString(answer);
                         return calculate();
                     }
                 }
-            } else if (hasAdd(input) == true) {
-                int index = findSymbol(input, "+");
-                double left = leftNumber(input, index);
-                double right = rightNumber(input, index);
+            } else if (hasAdd(output) == true) {
+                int index = findSymbol(output, "+");
+                double left = leftNumber(output, index);
+                double right = rightNumber(output, index);
                 double answer = left + right;
-                if (leftString(input, index) != null && rightString(input, index) != null) {
-                    input = leftString(input, index) + " " + Double.toString(answer) + " " + rightString(input, index);
+                if (leftString(output, index) != null && rightString(output, index) != null) {
+                    output = leftString(output, index) + " " + Double.toString(answer) + " " + rightString(output, index);
                     return calculate();
-                } else if (leftString(input, index) != null) {
-                    input = leftString(input, index) + " " + Double.toString(answer);
+                } else if (leftString(output, index) != null) {
+                    output = leftString(output, index) + " " + Double.toString(answer);
                     return calculate();
-                } else if (rightString(input, index) != null) {
-                    input = Double.toString(answer) + " " + rightString(input, index);
+                } else if (rightString(output, index) != null) {
+                    output = Double.toString(answer) + " " + rightString(output, index);
                     return calculate();
                 } else {
-                    input = Double.toString(answer);
+                    output = Double.toString(answer);
                     return calculate();
                 }
-            } else if (hasSubtract(input) == true) {
-                int index = findSymbol(input, "-");
-                double left = leftNumber(input, index);
-                double right = rightNumber(input, index);
+            } else if (hasSubtract(output) == true) {
+                int index = findSymbol(output, "@");
+                double left = leftNumber(output, index);
+                double right = rightNumber(output, index);
                 double answer = left - right;
-                if (leftString(input, index) != null && rightString(input, index) != null) {
-                    input = leftString(input, index) + " " + Double.toString(answer) + " " + rightString(input, index);
+                if (leftString(output, index) != null && rightString(output, index) != null) {
+                    output = leftString(output, index) + " " + Double.toString(answer) + " " + rightString(output, index);
                     return calculate();
-                } else if (leftString(input, index) != null) {
-                    input = leftString(input, index) + " " + Double.toString(answer);
+                } else if (leftString(output, index) != null) {
+                    output = leftString(output, index) + " " + Double.toString(answer);
                     return calculate();
-                } else if (rightString(input, index) != null) {
-                    input = Double.toString(answer) + " " + rightString(input, index);
+                } else if (rightString(output, index) != null) {
+                    output = Double.toString(answer) + " " + rightString(output, index);
                     return calculate();
                 } else {
-                    input = Double.toString(answer);
+                    output = Double.toString(answer);
                     return calculate();
                 }
             }

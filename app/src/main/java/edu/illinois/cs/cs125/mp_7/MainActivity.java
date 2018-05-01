@@ -31,6 +31,15 @@ public class MainActivity extends AppCompatActivity {
                 /* Insert swap tab code here */
             }
         });
+        final Button graph = findViewById(R.id.graph);
+        graph.setOnClickListener(new View.OnClickListener() {
+        @Override
+            public void onClick (final View v) {
+            Log.d(TAG, "graphing button clicked");
+            setContentView(R.layout.graph);
+            //change activity to graphing window that displays the graphing api
+        }
+        });
 
     }
 }

@@ -38,6 +38,14 @@ public class MainActivity extends AppCompatActivity {
                 /* Insert swap tab code here */
             }
         });
+        final Button graph = findViewById(R.id.graph);
+        graph.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick (final View v) {
+                Log.d(TAG, "second button clicked");
+                setContentView(R.layout.graph);
+            }
+        });
         final Button zero = findViewById(R.id.zero);
         zero.setOnClickListener(new View.OnClickListener() {
             @Override

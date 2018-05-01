@@ -11,6 +11,11 @@
         tools:layout_editor_absoluteX="6dp"
         tools:layout_editor_absoluteY="12dp">
 
+        <com.jjoe64.graphview.GraphView
+            android:layout_width="match_parent"
+            android:layout_height="200dip"
+            android:id="@+id/scatter" />
+
         <Button
             android:id="@+id/seven"
             android:layout_width="82dp"

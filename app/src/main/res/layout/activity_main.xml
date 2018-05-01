@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity"
+    android:orientation="vertical" android:layout_width="fill_parent"
+    android:layout_height="fill_parent" android:weightSum="100">
+
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -534,6 +542,7 @@
         android:layout_height="40dp"
         android:layout_marginLeft="300dp"
         android:layout_marginStart="300dp"
+        android:contentDescription="@string/up"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -546,6 +555,7 @@
         android:layout_height="40dp"
         android:layout_marginLeft="300dp"
         android:layout_marginStart="300dp"
+        android:contentDescription="@string/down"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -558,6 +568,7 @@
         android:layout_height="80dp"
         android:layout_marginLeft="356dp"
         android:layout_marginStart="356dp"
+        android:contentDescription="@string/right"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -570,6 +581,7 @@
         android:layout_height="80dp"
         android:layout_marginLeft="244dp"
         android:layout_marginStart="244dp"
+        android:contentDescription="@string/left"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -581,16 +593,18 @@
         android:layout_width="83dp"
         android:layout_height="40dp"
         android:layout_marginTop="560dp"
+        android:contentDescription="@string/camera"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_camera_black" />
 
 
     <TextView
+        android:id="@+id/screen"
         android:layout_width="313dp"
         android:layout_height="196dp"
-        android:text="Calculator Print Screen"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:contentDescription="@string/screen"
+        android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/delete"
         app:layout_constraintHorizontal_bias="0.632"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -599,3 +613,4 @@
         app:layout_constraintVertical_bias="0.074" />
 
 </android.support.constraint.ConstraintLayout>
+</LinearLayout>

@@ -3,7 +3,7 @@ package edu.illinois.cs.cs125.mp_7;
 public class Calculate {
     private static String input = "";
 
-    public void clear() {
+    public static void clear() {
         input = "";
     }
 
@@ -13,6 +13,10 @@ public class Calculate {
 
     public static void addOperationToString(final String operation) {
         input += " " + operation + " ";
+    }
+
+    public static String getString() {
+        return input;
     }
 
     private static boolean hasSymbol(final String calculation) {

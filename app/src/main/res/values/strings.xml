@@ -45,5 +45,11 @@
     <string name="decimal">.</string>
     <string name="negative">(-)</string>
     <string name="enter">ENTER</string>
+    <string name="screen">Print_Screen</string>
+    <string name="up">Moves cursor up</string>
+    <string name="down">Moves cursor down</string>
+    <string name="right">Moves cursor right</string>
+    <string name="left">Moves cursor left</string>
+    <string name="camera">Does nothing</string>
 
 </resources>

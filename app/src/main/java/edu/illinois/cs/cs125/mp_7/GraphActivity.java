@@ -65,6 +65,11 @@ public class GraphActivity extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
+                if (iterate % 2 == 0) {
+                    Graphing.nextX();
+                } else {
+                    Graphing.nextY();
+                }
                 iterate++;
                 if (iterate == 10) {
                     iterate = 0;
@@ -77,7 +82,6 @@ public class GraphActivity extends AppCompatActivity {
             public void onClick (final View v) {
                 if (iterate % 2 == 0) {
                     Graphing.addX("1");
-                    Graphing.nextX();
                     if (iterate == 0) {
                         x1View.setText(Graphing.getX());
                     } else if (iterate == 2) {
@@ -91,7 +95,6 @@ public class GraphActivity extends AppCompatActivity {
                     }
                 } else {
                     Graphing.addY("1");
-                    Graphing.nextY();
                     if (iterate == 1) {
                         y1View.setText(Graphing.getY());
                     } else if (iterate == 3) {
@@ -112,7 +115,6 @@ public class GraphActivity extends AppCompatActivity {
             public void onClick (final View v) {
                 if (iterate % 2 == 0) {
                     Graphing.addX("2");
-                    Graphing.nextX();
                     if (iterate == 0) {
                         x1View.setText(Graphing.getX());
                     } else if (iterate == 2) {
@@ -126,7 +128,6 @@ public class GraphActivity extends AppCompatActivity {
                     }
                 } else {
                     Graphing.addY("2");
-                    Graphing.nextY();
                     if (iterate == 1) {
                         y1View.setText(Graphing.getY());
                     } else if (iterate == 3) {
@@ -147,7 +148,6 @@ public class GraphActivity extends AppCompatActivity {
             public void onClick (final View v) {
                 if (iterate % 2 == 0) {
                     Graphing.addX("3");
-                    Graphing.nextX();
                     if (iterate == 0) {
                         x1View.setText(Graphing.getX());
                     } else if (iterate == 2) {
@@ -161,7 +161,6 @@ public class GraphActivity extends AppCompatActivity {
                     }
                 } else {
                     Graphing.addY("3");
-                    Graphing.nextY();
                     if (iterate == 1) {
                         y1View.setText(Graphing.getY());
                     } else if (iterate == 3) {
@@ -182,7 +181,6 @@ public class GraphActivity extends AppCompatActivity {
             public void onClick (final View v) {
                 if (iterate % 2 == 0) {
                     Graphing.addX("4");
-                    Graphing.nextX();
                     if (iterate == 0) {
                         x1View.setText(Graphing.getX());
                     } else if (iterate == 2) {
@@ -196,7 +194,6 @@ public class GraphActivity extends AppCompatActivity {
                     }
                 } else {
                     Graphing.addY("4");
-                    Graphing.nextY();
                     if (iterate == 1) {
                         y1View.setText(Graphing.getY());
                     } else if (iterate == 3) {
@@ -217,7 +214,6 @@ public class GraphActivity extends AppCompatActivity {
             public void onClick (final View v) {
                 if (iterate % 2 == 0) {
                     Graphing.addX("5");
-                    Graphing.nextX();
                     if (iterate == 0) {
                         x1View.setText(Graphing.getX());
                     } else if (iterate == 2) {
@@ -231,7 +227,6 @@ public class GraphActivity extends AppCompatActivity {
                     }
                 } else {
                     Graphing.addY("5");
-                    Graphing.nextY();
                     if (iterate == 1) {
                         y1View.setText(Graphing.getY());
                     } else if (iterate == 3) {
@@ -252,7 +247,6 @@ public class GraphActivity extends AppCompatActivity {
             public void onClick (final View v) {
                 if (iterate % 2 == 0) {
                     Graphing.addX("6");
-                    Graphing.nextX();
                     if (iterate == 0) {
                         x1View.setText(Graphing.getX());
                     } else if (iterate == 2) {
@@ -266,7 +260,6 @@ public class GraphActivity extends AppCompatActivity {
                     }
                 } else {
                     Graphing.addY("6");
-                    Graphing.nextY();
                     if (iterate == 1) {
                         y1View.setText(Graphing.getY());
                     } else if (iterate == 3) {
@@ -287,7 +280,6 @@ public class GraphActivity extends AppCompatActivity {
             public void onClick (final View v) {
                 if (iterate % 2 == 0) {
                     Graphing.addX("7");
-                    Graphing.nextX();
                     if (iterate == 0) {
                         x1View.setText(Graphing.getX());
                     } else if (iterate == 2) {
@@ -301,7 +293,6 @@ public class GraphActivity extends AppCompatActivity {
                     }
                 } else {
                     Graphing.addY("7");
-                    Graphing.nextY();
                     if (iterate == 1) {
                         y1View.setText(Graphing.getY());
                     } else if (iterate == 3) {
@@ -322,7 +313,6 @@ public class GraphActivity extends AppCompatActivity {
             public void onClick (final View v) {
                 if (iterate % 2 == 0) {
                     Graphing.addX("8");
-                    Graphing.nextX();
                     if (iterate == 0) {
                         x1View.setText(Graphing.getX());
                     } else if (iterate == 2) {
@@ -336,7 +326,6 @@ public class GraphActivity extends AppCompatActivity {
                     }
                 } else {
                     Graphing.addY("8");
-                    Graphing.nextY();
                     if (iterate == 1) {
                         y1View.setText(Graphing.getY());
                     } else if (iterate == 3) {
@@ -357,7 +346,6 @@ public class GraphActivity extends AppCompatActivity {
             public void onClick (final View v) {
                 if (iterate % 2 == 0) {
                     Graphing.addX("9");
-                    Graphing.nextX();
                     if (iterate == 0) {
                         x1View.setText(Graphing.getX());
                     } else if (iterate == 2) {
@@ -371,7 +359,6 @@ public class GraphActivity extends AppCompatActivity {
                     }
                 } else {
                     Graphing.addY("9");
-                    Graphing.nextY();
                     if (iterate == 1) {
                         y1View.setText(Graphing.getY());
                     } else if (iterate == 3) {
@@ -392,7 +379,6 @@ public class GraphActivity extends AppCompatActivity {
             public void onClick (final View v) {
                 if (iterate % 2 == 0) {
                     Graphing.addX("0");
-                    Graphing.nextX();
                     if (iterate == 0) {
                         x1View.setText(Graphing.getX());
                     } else if (iterate == 2) {
@@ -406,7 +392,6 @@ public class GraphActivity extends AppCompatActivity {
                     }
                 } else {
                     Graphing.addY("0");
-                    Graphing.nextY();
                     if (iterate == 1) {
                         y1View.setText(Graphing.getY());
                     } else if (iterate == 3) {
@@ -427,7 +412,6 @@ public class GraphActivity extends AppCompatActivity {
             public void onClick (final View v) {
                 if (iterate % 2 == 0) {
                     Graphing.addX(".");
-                    Graphing.nextX();
                     if (iterate == 0) {
                         x1View.setText(Graphing.getX());
                     } else if (iterate == 2) {
@@ -441,7 +425,6 @@ public class GraphActivity extends AppCompatActivity {
                     }
                 } else {
                     Graphing.addY(".");
-                    Graphing.nextY();
                     if (iterate == 1) {
                         y1View.setText(Graphing.getY());
                     } else if (iterate == 3) {

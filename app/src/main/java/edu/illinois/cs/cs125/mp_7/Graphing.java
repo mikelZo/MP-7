@@ -24,12 +24,20 @@ public class Graphing {
 
     public static void addX(final String value) {
         int i = GraphActivity.getIterate() / 2;
-        xString[i] += value;
+        if (xString[i] == null) {
+            xString[i] = value;
+        } else {
+            xString[i] += value;
+        }
     }
 
     public static void addY(final String value) {
         int i = (GraphActivity.getIterate() - 1) / 2;
-        yString[i] += value;
+        if (yString[i] == null) {
+            yString[i] = value;
+        } else {
+            yString[i] += value;
+        }
     }
 
     public static String getX() {
@@ -64,8 +72,7 @@ public class Graphing {
                 new DataPoint(x[1], y[1]),
                 new DataPoint(x[2], y[2]),
                 new DataPoint(x[3], y[3]),
-                new DataPoint(x[4], y[4]),
-                new DataPoint(x[5], y[5])
+                new DataPoint(x[4], y[4])
         });
         return series;
     }

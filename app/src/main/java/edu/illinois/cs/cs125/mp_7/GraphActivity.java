@@ -13,6 +13,7 @@ import com.jjoe64.graphview.GraphView;
 public class GraphActivity extends AppCompatActivity {
     /** Default logging tag for messages from the main activity. */
     private static final String TAG = "Mp7:Graph";
+    private static int iterate = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,14 +25,19 @@ public class GraphActivity extends AppCompatActivity {
         /*
         Set up handlers for each button in our UI. These run when the buttons are clicked.
          */
-        final Button graph = findViewById(R.id.graphing);
+        final Button graph = findViewById(R.id.calculator);
         graph.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick (final View v) {
-                Log.d(TAG, "second button clicked");
-                /* Insert swap tab code here */
+                setContentView(R.layout.activity_main);
             }
         });
 
+        final Button
+
+    }
+
+    public static int getIterate() {
+        return iterate;
     }
 }

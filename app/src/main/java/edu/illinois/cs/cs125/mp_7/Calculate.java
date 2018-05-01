@@ -337,7 +337,7 @@ public class Calculate {
             if (hasParentheses(input) == true) {
                 int leftIndex = findSymbol(input, "(");
                 int rightIndex = findSymbol(input, ")");
-                String parentheses = calculateParentheses(input.substring(leftIndex + 2, rightIndex - 2));
+                String parentheses = calculateParentheses(input.substring(leftIndex + 2, rightIndex - 1));
                 if (leftString(input, leftIndex) != null && rightString(input, rightIndex) != null) {
                     input = leftString(input, leftIndex) + " " + parentheses + " " + rightString(input, rightIndex);
                     return calculate();

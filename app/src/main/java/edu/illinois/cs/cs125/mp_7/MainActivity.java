@@ -10,7 +10,9 @@ import android.widget.TextView;
 
 
 public class MainActivity extends AppCompatActivity {
-    /** Default logging tag for messages from the main activity. */
+    /**
+     * Default logging tag for messages from the main activity.
+     */
     private static final String TAG = "Mp7:Main";
 
     @Override
@@ -26,11 +28,21 @@ public class MainActivity extends AppCompatActivity {
         final Button second = findViewById(R.id.second);
         second.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick (final View v) {
+            public void onClick(final View v) {
                 Log.d(TAG, "second button clicked");
                 /* Insert swap tab code here */
             }
         });
+
+        final Button graph = findViewById(R.id.graph);
+        graph.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View v) {
+                Log.d(TAG, "graph button clicked");
+                setContentView(R.layout.graph);
+            }
+        });
+
 
     }
 }

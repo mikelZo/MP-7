@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <com.jjoe64.graphview.GraphView
+        android:layout_width="match_parent"
+        android:layout_height="200dip"
+        android:id="@+id/scatter"/>
+
+
+    <Button
+        android:id="@+id/graphing"
+        android:layout_width="83dp"
+        android:layout_height="40dp"
+        android:text="@string/graph" />
+
+
+</FrameLayout>

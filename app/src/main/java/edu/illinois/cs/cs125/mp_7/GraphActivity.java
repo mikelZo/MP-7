@@ -57,6 +57,7 @@ public class GraphActivity extends AppCompatActivity {
         plot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
+                Graphing.sort();
                 LineGraphSeries<DataPoint> series = Graphing.getGraph();
                 graph.addSeries(series);
             }
@@ -73,6 +74,91 @@ public class GraphActivity extends AppCompatActivity {
                 iterate++;
                 if (iterate == 10) {
                     iterate = 0;
+                }
+            }
+        });
+        final Button clear = findViewById(R.id.clear_graph);
+        clear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View v) {
+                Graphing.clear();
+                x1View.setText(Graphing.getX());
+                x2View.setText(Graphing.getX());
+                x3View.setText(Graphing.getX());
+                x4View.setText(Graphing.getX());
+                x5View.setText(Graphing.getX());
+                y1View.setText(Graphing.getY());
+                y2View.setText(Graphing.getY());
+                y3View.setText(Graphing.getY());
+                y4View.setText(Graphing.getY());
+                y5View.setText(Graphing.getY());
+                iterate = 0;
+                graph.removeAllSeries();
+            }
+        });
+        final Button delete = findViewById(R.id.delete_graph);
+        delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick (final View v) {
+                if (iterate % 2 == 0) {
+                    Graphing.deleteX();
+                    if (iterate == 0) {
+                        x1View.setText(Graphing.getX());
+                    } else if (iterate == 2) {
+                        x2View.setText(Graphing.getX());
+                    } else if (iterate == 4) {
+                        x3View.setText(Graphing.getX());
+                    } else if (iterate == 6) {
+                        x4View.setText(Graphing.getX());
+                    } else if (iterate == 8) {
+                        x5View.setText(Graphing.getX());
+                    }
+                } else {
+                    Graphing.deleteY();
+                    if (iterate == 1) {
+                        y1View.setText(Graphing.getY());
+                    } else if (iterate == 3) {
+                        y2View.setText(Graphing.getY());
+                    } else if (iterate == 5) {
+                        y3View.setText(Graphing.getY());
+                    } else if (iterate == 7) {
+                        y4View.setText(Graphing.getY());
+                    } else if (iterate == 9) {
+                        y5View.setText(Graphing.getY());
+                    }
+                }
+            }
+        });
+        final Button negative = findViewById(R.id.negative_graph);
+        negative.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick (final View v) {
+                if (iterate % 2 == 0) {
+                    Graphing.addX("-");
+                    if (iterate == 0) {
+                        x1View.setText(Graphing.getX());
+                    } else if (iterate == 2) {
+                        x2View.setText(Graphing.getX());
+                    } else if (iterate == 4) {
+                        x3View.setText(Graphing.getX());
+                    } else if (iterate == 6) {
+                        x4View.setText(Graphing.getX());
+                    } else if (iterate == 8) {
+                        x5View.setText(Graphing.getX());
+                    }
+                } else {
+                    Graphing.addY("-");
+                    if (iterate == 1) {
+                        y1View.setText(Graphing.getY());
+                    } else if (iterate == 3) {
+                        y2View.setText(Graphing.getY());
+                    } else if (iterate == 5) {
+                        y3View.setText(Graphing.getY());
+                    } else if (iterate == 7) {
+                        y4View.setText(Graphing.getY());
+                    } else if (iterate == 9) {
+                        y5View.setText(Graphing.getY());
+                    }
                 }
             }
         });

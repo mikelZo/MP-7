@@ -15,6 +15,14 @@ public class Calculate {
         input += " " + operation + " ";
     }
 
+    public static void delete() {
+        if (input.length() > 1) {
+            input = input.substring(0, input.length() - 1);
+        } else {
+            input = "";
+        }
+    }
+
     public static String getString() {
         return input;
     }

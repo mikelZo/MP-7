@@ -22,6 +22,48 @@ public class Graphing {
     private static double[] x = new double[5];
     private static double[] y = new double[5];
 
+    public static void sort() {
+        for (int i = 0; i < x.length; i++) {
+            for (int j = 1; j < x.length - i; j++) {
+                if (x[j] < x[j - 1]) {
+                    double tempX = x[j];
+                    double tempY = y[j];
+                    x[j] = x[j - 1];
+                    x[j - 1] = tempX;
+                    y[j] = y[j - 1];
+                    y[j - 1] = tempY;
+                }
+            }
+        }
+    }
+
+    public static void clear() {
+        for (int i = 0; i < xString.length; i++) {
+            xString[i] = "";
+            yString[i] = "";
+            x[i] = 0;
+            y[i] = 0;
+        }
+    }
+
+    public static void deleteX() {
+        int i = GraphActivity.getIterate() / 2;
+        if (xString[i].length() > 1) {
+            xString[i] = xString[i].substring(0, xString[i].length() - 1);
+        } else {
+            xString[i] = "";
+        }
+    }
+
+    public static void deleteY() {
+        int i = (GraphActivity.getIterate() - 1) / 2;
+        if (yString[i].length() > 1) {
+            yString[i] = yString[i].substring(0, yString[i].length() - 1);
+        } else {
+            yString[i] = "";
+        }
+    }
+
     public static void addX(final String value) {
         int i = GraphActivity.getIterate() / 2;
         if (xString[i] == null) {
@@ -53,7 +95,9 @@ public class Graphing {
     public static void nextX() {
         for (int i = 0; i < xString.length; i++) {
             if (xString[i] != null) {
-                x[i] = Double.parseDouble(xString[i]);
+                if (!xString[i].equals("")) {
+                    x[i] = Double.parseDouble(xString[i]);
+                }
             }
         }
     }
@@ -61,7 +105,9 @@ public class Graphing {
     public static void nextY() {
         for (int i = 0; i < yString.length; i++) {
             if (yString[i] != null) {
-                y[i] = Double.parseDouble(yString[i]);
+                if (!yString[i].equals("")){
+                    y[i] = Double.parseDouble(yString[i]);
+                }
             }
         }
     }

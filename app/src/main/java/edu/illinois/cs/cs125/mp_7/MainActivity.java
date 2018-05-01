@@ -37,6 +37,14 @@ public class MainActivity extends AppCompatActivity {
                 /* Insert swap tab code here */
             }
         });
+        final Button delete = findViewById(R.id.delete);
+        delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick (final View v) {
+                Calculate.delete();
+                txtView.setText(Calculate.getString());
+            }
+        });
         final Button graph = findViewById(R.id.graph);
         graph.setOnClickListener(new View.OnClickListener() {
             @Override

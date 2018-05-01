@@ -19,9 +19,9 @@
         <com.jjoe64.graphview.GraphView
             android:id="@+id/scatter"
             android:layout_width="380dp"
-            android:layout_height="370dp"
+            android:layout_height="340dp"
             android:layout_marginLeft="10dp"
-            android:layout_marginStart="10dp"/>
+            android:layout_marginStart="10dp" />
 
         <Button
             android:id="@+id/seven_graph"
@@ -137,7 +137,7 @@
             android:layout_height="40dp"
             android:layout_marginLeft="84dp"
             android:layout_marginStart="160dp"
-            android:layout_marginTop="380dp"
+            android:layout_marginTop="340dp"
             android:text="@string/plot" />
 
         <TextView
@@ -148,6 +148,7 @@
             android:layout_marginLeft="5dp"
             android:layout_marginStart="5dp"
             android:textSize="14sp"
+            android:text="@string/x"
             android:contentDescription="@string/x" />
 
         <TextView
@@ -158,6 +159,7 @@
             android:layout_marginStart="80dp"
             android:layout_marginTop="540dp"
             android:textSize="14sp"
+            android:text="@string/y"
             android:contentDescription="@string/y" />
 
         <TextView
@@ -168,6 +170,7 @@
             android:layout_marginLeft="5dp"
             android:layout_marginStart="5dp"
             android:textSize="14sp"
+            android:text="@string/x"
             android:contentDescription="@string/x" />
 
         <TextView
@@ -178,6 +181,7 @@
             android:layout_marginStart="80dp"
             android:layout_marginTop="500dp"
             android:textSize="14sp"
+            android:text="@string/y"
             android:contentDescription="@string/y" />
 
         <TextView
@@ -188,6 +192,7 @@
             android:layout_marginLeft="5dp"
             android:layout_marginStart="5dp"
             android:textSize="14sp"
+            android:text="@string/x"
             android:contentDescription="@string/x" />
 
         <TextView
@@ -198,6 +203,7 @@
             android:layout_marginStart="80dp"
             android:layout_marginTop="460dp"
             android:textSize="14sp"
+            android:text="@string/y"
             android:contentDescription="@string/y" />
 
         <TextView
@@ -208,6 +214,7 @@
             android:layout_marginLeft="5dp"
             android:layout_marginStart="5dp"
             android:textSize="14sp"
+            android:text="@string/x"
             android:contentDescription="@string/x" />
 
         <TextView
@@ -218,6 +225,7 @@
             android:layout_marginStart="80dp"
             android:layout_marginTop="420dp"
             android:textSize="14sp"
+            android:text="@string/y"
             android:contentDescription="@string/y" />
 
         <TextView
@@ -228,6 +236,7 @@
             android:layout_marginLeft="5dp"
             android:layout_marginStart="5dp"
             android:textSize="14sp"
+            android:text="@string/x"
             android:contentDescription="@string/x" />
 
         <TextView
@@ -238,6 +247,7 @@
             android:layout_marginStart="80dp"
             android:layout_marginTop="380dp"
             android:textSize="14sp"
+            android:text="@string/y"
             android:contentDescription="@string/y" />
 
         <Button
@@ -246,8 +256,35 @@
             android:layout_height="40dp"
             android:layout_marginLeft="84dp"
             android:layout_marginStart="280dp"
-            android:layout_marginTop="380dp"
+            android:layout_marginTop="340dp"
             android:text="@string/calculator" />
+
+        <Button
+            android:id="@+id/negative_graph"
+            android:layout_width="82dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="84dp"
+            android:layout_marginStart="160dp"
+            android:layout_marginTop="380dp"
+            android:text="@string/negative" />
+
+        <Button
+            android:id="@+id/delete_graph"
+            android:layout_width="82dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="164dp"
+            android:layout_marginStart="240dp"
+            android:layout_marginTop="380dp"
+            android:text="@string/delete" />
+
+        <Button
+            android:id="@+id/clear_graph"
+            android:layout_width="82dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="248dp"
+            android:layout_marginStart="320dp"
+            android:layout_marginTop="380dp"
+            android:text="@string/clear" />
 
     </FrameLayout>
 

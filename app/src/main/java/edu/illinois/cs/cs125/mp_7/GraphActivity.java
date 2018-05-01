@@ -11,9 +11,13 @@ import com.jjoe64.graphview.GraphView;
 
 
 public class GraphActivity extends AppCompatActivity {
+<<<<<<< HEAD
     /**
      * Default logging tag for messages from the main activity.
      */
+=======
+    /** Default logging tag for messages from the main activity. */
+>>>>>>> 0d28c3f43632a79c014650fa6b4d829998c81581
     private static final String TAG = "Mp7:Graph";
     private static int iterate = 0;
 
@@ -23,6 +27,7 @@ public class GraphActivity extends AppCompatActivity {
 
         /* Load the main layout for our activity */
         setContentView(R.layout.graph);
+<<<<<<< HEAD
         GraphView graph = findViewById(R.id.scatter);
         final TextView x1view = findViewById(R.id.x1);
         final TextView x2view = findViewById(R.id.x2);
@@ -41,10 +46,21 @@ public class GraphActivity extends AppCompatActivity {
         calculator.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
+=======
+
+        /*
+        Set up handlers for each button in our UI. These run when the buttons are clicked.
+         */
+        final Button graph = findViewById(R.id.calculator);
+        graph.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick (final View v) {
+>>>>>>> 0d28c3f43632a79c014650fa6b4d829998c81581
                 setContentView(R.layout.activity_main);
             }
         });
 
+<<<<<<< HEAD
         final Button plot = findViewById(R.id.plot_data);
         plot.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -186,5 +202,13 @@ public class GraphActivity extends AppCompatActivity {
         });
 
 
+=======
+        final Button
+
+    }
+
+    public static int getIterate() {
+        return iterate;
+>>>>>>> 0d28c3f43632a79c014650fa6b4d829998c81581
     }
 }

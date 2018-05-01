@@ -1,9 +1,11 @@
 package edu.illinois.cs.cs125.mp_7;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewConfiguration;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -23,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
         final TextView txtView = findViewById(R.id.screen);
 
+
         /*
         Set up handlers for each button in our UI. These run when the buttons are clicked.
          */
@@ -38,8 +41,8 @@ public class MainActivity extends AppCompatActivity {
         graph.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick (final View v) {
-                Log.d(TAG, "second button clicked");
-                setContentView(R.layout.graph);
+                Intent intent = new Intent(getApplicationContext(), GraphActivity.class);
+                startActivity(intent);
             }
         });
         final Button zero = findViewById(R.id.zero);
@@ -223,16 +226,5 @@ public class MainActivity extends AppCompatActivity {
                 txtView.setText(Calculate.getString());
             }
         });
-
-        final Button test = findViewById(R.id.power);
-        test.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick (final View v) {
-                Log.d(TAG, "power");
-                Calculate.addOperationToString("^");
-                txtView.setText(Calculate.getString());
-            }
-        });
-
     }
 }

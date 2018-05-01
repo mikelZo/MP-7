@@ -51,5 +51,10 @@
     <string name="right">Moves cursor right</string>
     <string name="left">Moves cursor left</string>
     <string name="camera">Does nothing</string>
+    <string name="next">NEXT</string>
+    <string name="plot">PLOT DATA</string>
+    <string name="x">x</string>
+    <string name="y">y</string>
+    <string name="calculator">CALCULATOR</string>
 
 </resources>

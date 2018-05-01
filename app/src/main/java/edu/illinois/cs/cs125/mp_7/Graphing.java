@@ -32,6 +32,16 @@ public class Graphing {
         yString[i] += value;
     }
 
+    public static String getX() {
+        int i = GraphActivity.getIterate() / 2;
+        return xString[i];
+    }
+
+    public static String getY() {
+        int i = (GraphActivity.getIterate() - 1) / 2;
+        return yString[i];
+    }
+
     public static void nextX() {
         for (int i = 0; i < xString.length; i++) {
             if (xString[i] != null) {
@@ -48,7 +58,7 @@ public class Graphing {
         }
     }
 
-    public static LineGraphSeries getGraph() {
+    public static LineGraphSeries<DataPoint> getGraph() {
         LineGraphSeries<DataPoint> series = new LineGraphSeries<>(new DataPoint[] {
                 new DataPoint(x[0], y[0]),
                 new DataPoint(x[1], y[1]),

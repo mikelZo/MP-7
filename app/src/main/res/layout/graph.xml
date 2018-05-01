@@ -12,12 +12,13 @@
         tools:layout_editor_absoluteY="12dp">
 
         <com.jjoe64.graphview.GraphView
-            android:layout_width="match_parent"
-            android:layout_height="200dip"
-            android:id="@+id/scatter" />
+            android:id="@+id/scatter"
+            android:layout_width="380dp"
+            android:layout_height="370dp"
+            android:layout_marginLeft="10dp"/>
 
         <Button
-            android:id="@+id/seven"
+            android:id="@+id/seven_graph"
             android:layout_width="82dp"
             android:layout_height="40dp"
             android:layout_marginLeft="84dp"
@@ -26,7 +27,7 @@
             android:text="@string/seven" />
 
         <Button
-            android:id="@+id/eight"
+            android:id="@+id/eight_graph"
             android:layout_width="82dp"
             android:layout_height="40dp"
             android:layout_marginLeft="164dp"
@@ -35,7 +36,7 @@
             android:text="@string/eight" />
 
         <Button
-            android:id="@+id/nine"
+            android:id="@+id/nine_graph"
             android:layout_width="82dp"
             android:layout_height="40dp"
             android:layout_marginLeft="248dp"
@@ -44,7 +45,7 @@
             android:text="@string/nine" />
 
         <Button
-            android:id="@+id/four"
+            android:id="@+id/four_graph"
             android:layout_width="82dp"
             android:layout_height="40dp"
             android:layout_marginLeft="84dp"
@@ -53,7 +54,7 @@
             android:text="@string/four" />
 
         <Button
-            android:id="@+id/five"
+            android:id="@+id/five_graph"
             android:layout_width="82dp"
             android:layout_height="40dp"
             android:layout_marginLeft="164dp"
@@ -62,7 +63,7 @@
             android:text="@string/five" />
 
         <Button
-            android:id="@+id/six"
+            android:id="@+id/six_graph"
             android:layout_width="82dp"
             android:layout_height="40dp"
             android:layout_marginLeft="248dp"
@@ -71,7 +72,7 @@
             android:text="@string/six" />
 
         <Button
-            android:id="@+id/one"
+            android:id="@+id/one_graph"
             android:layout_width="82dp"
             android:layout_height="40dp"
             android:layout_marginLeft="84dp"
@@ -80,7 +81,7 @@
             android:text="@string/one" />
 
         <Button
-            android:id="@+id/two"
+            android:id="@+id/two_graph"
             android:layout_width="82dp"
             android:layout_height="40dp"
             android:layout_marginLeft="164dp"
@@ -89,7 +90,7 @@
             android:text="@string/two" />
 
         <Button
-            android:id="@+id/three"
+            android:id="@+id/three_graph"
             android:layout_width="82dp"
             android:layout_height="40dp"
             android:layout_marginLeft="248dp"
@@ -98,7 +99,7 @@
             android:text="@string/three" />
 
         <Button
-            android:id="@+id/zero"
+            android:id="@+id/zero_graph"
             android:layout_width="82dp"
             android:layout_height="40dp"
             android:layout_marginLeft="84dp"
@@ -107,7 +108,7 @@
             android:text="@string/zero" />
 
         <Button
-            android:id="@+id/decimal"
+            android:id="@+id/decimal_graph"
             android:layout_width="82dp"
             android:layout_height="40dp"
             android:layout_marginLeft="164dp"
@@ -116,7 +117,7 @@
             android:text="@string/decimal" />
 
         <Button
-            android:id="@+id/next"
+            android:id="@+id/next_graph"
             android:layout_width="82dp"
             android:layout_height="40dp"
             android:layout_marginLeft="248dp"
@@ -125,7 +126,7 @@
             android:text="NEXT" />
 
         <Button
-            android:id="@+id/plot_data"
+            android:id="@+id/plot_data_graph"
             android:layout_width="120dp"
             android:layout_height="40dp"
             android:layout_marginLeft="84dp"

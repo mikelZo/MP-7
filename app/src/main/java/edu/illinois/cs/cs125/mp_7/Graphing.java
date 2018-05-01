@@ -1,5 +1,9 @@
 package edu.illinois.cs.cs125.mp_7;
 
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.PointsGraphSeries;
